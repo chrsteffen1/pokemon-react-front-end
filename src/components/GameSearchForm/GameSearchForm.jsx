@@ -1,9 +1,12 @@
 import { useState } from "react";
+import * as cartridgeService from '../../services/cartridgeService'
 
 const GameSearchForm = (props) => {
   const [formData, setFormData] = useState({
     gameQuery: ''
   })
+
+  const [games, setGames] = useState([])
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -11,7 +14,12 @@ const GameSearchForm = (props) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleGameSearch(formData)
+    handleGameSearch(formData)
+  }
+  
+  const handleGameSearch = async formData => {
+    const gameResults = await cartridgeService.search(formData)
+    setGames(gameResults)
   }
 
 
