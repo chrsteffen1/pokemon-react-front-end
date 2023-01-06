@@ -20,6 +20,7 @@ const GameSearchForm = (props) => {
   const handleGameSearch = async formData => {
     const gameResults = await cartridgeService.search(formData)
     setGames(gameResults)
+    console.log(formData, 'FORM DATA')
   }
 
 
@@ -39,8 +40,21 @@ const GameSearchForm = (props) => {
     >
     </input>
   </form>
+  {games.length ?
+  <div>
+    {games.map(game =>
+      <div>
+        {game.activity}
+      </div>
+      )}
+  </div>
+  :
+  <>
+  <h2>No results</h2>
+  </>
+  }
   </>
   );
 }
- 
+
 export default GameSearchForm;
