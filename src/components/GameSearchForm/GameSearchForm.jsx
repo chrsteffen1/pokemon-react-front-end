@@ -40,19 +40,7 @@ const GameSearchForm = (props) => {
     >
     </input>
   </form>
-  {games.length ?
-  <div>
-    {games.map(game =>
-      <div>
-        {game.activity}
-      </div>
-      )}
-  </div>
-  :
-  <>
-  <h2>No results</h2>
-  </>
-  }
+  {games.activity}
   </>
   );
 }
