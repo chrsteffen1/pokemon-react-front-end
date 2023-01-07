@@ -28,7 +28,7 @@ const GameSearchForm = (props) => {
   return (  
   <>
   <form onSubmit={handleSubmit}>
-    <h1>Find a game</h1>
+    <h1>Do you want an activity?</h1>
     <input
       type="search"
       autoComplete="off"
@@ -41,6 +41,19 @@ const GameSearchForm = (props) => {
     </input>
   </form>
   {games.activity}
+  {games.length ?
+  <div>
+    {games.map(game =>
+      <div key={game.name}>
+        {game.name}
+      </div>
+      )}
+  </div>
+  :
+  <>
+  <h2>loading results</h2>
+  </>
+  }
   </>
   );
 }
