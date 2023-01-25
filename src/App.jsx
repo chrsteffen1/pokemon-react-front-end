@@ -1,6 +1,6 @@
 // npm modules
 import { useState } from 'react'
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { Routes, Route, useNavigate} from 'react-router-dom'
 
 // page components
 import Signup from './pages/Signup/Signup'
@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import GameSearchForm from './components/GameSearchForm/GameSearchForm'
 
 
 // services
@@ -61,6 +62,12 @@ const App = () => {
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
             </ProtectedRoute>
+          }
+        />
+        <Route
+          path="search"
+          element={
+            <GameSearchForm />
           }
         />
       </Routes>

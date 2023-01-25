@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
-import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 
-const Profiles = () => {
+
+const Profiles = ({user}) => {
   const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
@@ -15,7 +15,9 @@ const Profiles = () => {
 
   return (
     <>
-      <GameSearchForm />
+      {profiles.map((profile, idx) => 
+        <p key={idx}>{profile.name}</p>
+      )}
     </>
   )
 }
