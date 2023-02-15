@@ -18,9 +18,8 @@ const GameSearchForm = (props) => {
   }
   
   const handleGameSearch = async formData => {
-    const gameResults = await cartridgeService.search(formData)
+    const gameResults = await cartridgeService.search(formData.gameQuery)
     setGames(gameResults)
-    console.log(formData, 'FORM DATA')
   }
 
 
@@ -31,7 +30,7 @@ const GameSearchForm = (props) => {
   <div>
     <button onClick={handleSubmit}>New Activity</button>
   </div>
-  {/* <form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit}>
     <input
       type="search"
       autoComplete="off"
@@ -42,7 +41,7 @@ const GameSearchForm = (props) => {
       onChange={handleChange}
     >
     </input>
-  </form> */}
+  </form>
   <div>
     {games.name}
   </div>
