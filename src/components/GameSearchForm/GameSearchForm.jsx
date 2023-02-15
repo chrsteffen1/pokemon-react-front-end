@@ -44,7 +44,7 @@ const GameSearchForm = (props) => {
     </input>
   </form> */}
   <div>
-    {games.activity}
+    {games.name}
   </div>
   </>
   );
