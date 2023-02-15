@@ -26,9 +26,9 @@ const GameSearchForm = (props) => {
 
   return (  
   <>
-  <h1>Do you want an activity?</h1>
+  <h1>Pick a Game</h1>
   <div>
-    <button onClick={handleSubmit}>New Activity</button>
+    <button onClick={handleSubmit}>Find A Game</button>
   </div>
   <form onSubmit={handleSubmit}>
     <input
